@@ -13,6 +13,10 @@ git status
 git add .
 git commit -m "first commit"
 
+django-admin startproject djangopwa
+django-admin startapp posts
+templates
+
 # install
 sudo apt-get update && sudo apt-get upgrade -y
 cd /www
