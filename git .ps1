@@ -57,11 +57,11 @@ git push -u origin master
 
   git config --global user.email "sjpearce@gmail.com"
   git config --global user.name "pearcee"
-
+git remote add origin https://github.com/Pearcee/congenial-octo-system.git
 #>
 
 $comment = get-date
 git status
 git add  .
 git commit -m $comment
-git push -u origin master
+git push 
