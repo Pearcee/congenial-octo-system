@@ -62,6 +62,6 @@ git push -u origin master
 
 $comment = get-date
 git status
-git add --all .
+git add  .
 git commit -m $comment
 git push -u origin master
