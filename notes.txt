@@ -9,6 +9,9 @@ python -m pip freeze > requirements.txt
 python -m pip install -r requirements.txt
 
 git init
+git status
+git add .
+git commit -m "first commit"
 
 # install
 sudo apt-get update && sudo apt-get upgrade -y
@@ -43,7 +46,7 @@ git config --global user.name "steve"
 git config --global user.email sjpearce@gmail.com
 git status
 git add .
-$git commit -m "My Django Girls app, first commit"
+$git commit -m "first commit"
 
 # running
 
