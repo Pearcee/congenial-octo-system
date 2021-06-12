@@ -3,5 +3,6 @@ from . import views
 urlpatterns = [
     path(r'', views.index,name='index'),
     path(r'base_layout',views.base_layout,name='base_layout'),
-    path(r'getdata',views.getdata,name='getdata')
+    path(r'getdata',views.getdata,name='getdata'),
+    path(r'favicon.ico',views.getdata,name='/static/images/favicon.ico'),
 ]
