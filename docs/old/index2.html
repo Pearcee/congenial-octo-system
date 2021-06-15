@@ -27,7 +27,7 @@
     <script>
 
         let file = "fetch_info.txt"
-        let url = 'https://randomuser.me/api/?results=10'
+        let url = 'https://reqres.in/api/users'
         // 'http://worldtimeapi.org/api/timezone/Europe/London.txt
 
         function fetchData() {
@@ -40,15 +40,14 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data);
-                    const html = data.results
+                    console.log(data.data);
+                    const html = data.data
                         .map(user => {
                             return `
                             <div class="card">
-                                <img alt=${user.first_name} class="card--avatar" src="${user.picture.large}" />
+                                <img alt=${user.first_name} class="card--avatar" src="${user.avatar}" />
                                 <h1 class="card--title">${user.email}</h1>
-                                <h1 class="card--title">${user.cell}</h1>
-                                <a  class="card--link" href="#">${user.name.first} ${user.name.last}</a>
+                                <a  class="card--link" href="#">${user.first_name} ${user.last_name}</a>
                                 
                             </div>
                             `;
@@ -64,6 +63,32 @@
                 });
         }
         fetchData();
+
+        function postData() {
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: "morphos",
+                    job: "Leader"
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw error('ERROR');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+        postData();
     </script>
 </body>
 
