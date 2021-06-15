@@ -33,7 +33,7 @@
   
   h1 {
     color: black;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
   }
   .container {
     display: grid;
@@ -70,7 +70,7 @@
     color: #222;
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-top: 0.2rem;
   }
   
