@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Put your description here.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.w3schools.com/appml/2.0.3/appml.js"></script>
+    <title>Customers</title>
+</head>
+<body>
+    <h1>Customers</h1>
+
+    <table appml-data="customers.js">
+    <tr>
+      <th>Customer</th>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+    <tr appml-repeat="records">
+      <td>{{CustomerName}}</td>
+      <td>{{City}}</td>
+      <td>{{Country}}</td>
+    </tr>
+    </table>
+
+    <p id="demo">Fetch a file to change this text.</p>
+    <p id="demo1">1Fetch a file to change this text.</p>
+    <p id="demo2">2Fetch a file to change this text.</p>
+    <p id="demo3">3Fetch a file to change this text.</p>
+
+    <script>
+        fetch('https://api.github.com/users/manishmshiva', {
+        method: "GET",
+        headers: {"Content-type": "application/json;charset=UTF-8"}
+        })
+        .then(response => response.json()) 
+        .then(json => console.log(json)); 
+        .catch(err => console.log(err));
+    </script>
+</body>
+</html>
